@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 31st Birthday TXC!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes confetti {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            opacity: 0;
+            animation: confetti 5s linear forwards;
+            z-index: 1000;
+        }
+        .present-box {
+            transition: all 0.5s ease;
+            transform-style: preserve-3d;
+        }
+        .present-box:hover {
+            transform: scale(1.05) rotateY(10deg);
+        }
+        .present-box.open {
+            transform: rotateY(180deg) scale(1.1);
+        }
+        .flip-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+        .flip-front, .flip-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+        }
+        .flip-back {
+            transform: rotateY(180deg);
+        }
+        .birthday-today {
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-purple-900 via-pink-700 to-yellow-500 min-h-screen text-white overflow-x-hidden">
+    <!-- Confetti Container -->
+    <div id="confetti-container"></div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-12 text-center">
+        <!-- Header -->
+        <header class="mb-12">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 animate-bounce">
+                <span class="text-yellow-300">HAPPY</span> 
+                <span class="text-pink-300">31ST</span> 
+                <span class="text-purple-300">BIRTHDAY</span>
+            </h1>
+            <h2 class="text-4xl md:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-pink-400 to-purple-400">
+                TXC!
+            </h2>
+        </header>
+
+        <!-- Age Display -->
+        <div class="relative inline-block mb-12">
+            <div class="absolute -inset-4 bg-white rounded-full blur-md opacity-30"></div>
+            <div class="relative bg-black bg-opacity-40 rounded-full p-8 border-4 border-yellow-400 birthday-today">
+                <span class="text-9xl font-bold">31</span>
+            </div>
+        </div>
+
+        <!-- Birthday Message -->
+        <div class="max-w-3xl mx-auto mb-16 bg-black bg-opacity-30 rounded-2xl p-8 backdrop-blur-sm border border-white border-opacity-20 shadow-2xl">
+            <p class="text-xl md:text-2xl mb-6">
+                <i class="fas fa-quote-left text-yellow-300 mr-2"></i>
+                Wishing you an unforgettable 31st birthday filled with love, laughter, and all your favorite things. The next year will be a big one for you, enjoy your special day! -Maxwell & Angie & Basil
+                <i class="fas fa-quote-right text-yellow-300 ml-2"></i>
+            </p>
+            <div class="flex justify-center space-x-4">
+                <div class="w-12 h-12 rounded-full bg-yellow-400 animate-pulse"></div>
+                <div class="w-12 h-12 rounded-full bg-pink-400 animate-pulse delay-100"></div>
+                <div class="w-12 h-12 rounded-full bg-purple-400 animate-pulse delay-200"></div>
+            </div>
+        </div>
+
+
+        <!-- Presents Section -->
+        <div class="mt-20">
+            <h3 class="text-3xl font-bold mb-8">Your Special Birthday Presents</h3>
+            <p class="mb-8 text-lg">Click to reveal your birthday surprises!</p>
+            
+            <div class="flex flex-col md:flex-row justify-center gap-8">
+                <!-- Present 1 -->
+                <div class="present-box w-64 h-64 cursor-pointer" onclick="revealPresent(1)">
+                    <div class="flip-inner">
+                        <div class="flip-front bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-xl shadow-2xl flex flex-col items-center justify-center p-4 border-4 border-yellow-700">
+                            <div class="w-16 h-8 bg-red-500 rounded-t-lg mb-2"></div>
+                            <div class="w-full h-full bg-yellow-300 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-gift text-6xl text-yellow-700"></i>
+                            </div>
+                            <p class="mt-2 font-bold">Present #1</p>
+                        </div>
+                        <div class="flip-back bg-gradient-to-br from-pink-400 to-pink-600 rounded-xl shadow-2xl flex flex-col items-center justify-center p-4 border-4 border-pink-700">
+                            <h4 class="text-xl font-bold mb-2">Surprise!</h4>
+                            <p class="mb-4">You've unlocked:</p>
+                            <a href="#" class="bg-white text-pink-600 px-4 py-2 rounded-lg font-bold hover:bg-pink-100 transition">Invincible - Volume 1</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Present 2 -->
+                <div class="present-box w-64 h-64 cursor-pointer" onclick="revealPresent(2)">
+                    <div class="flip-inner">
+                        <div class="flip-front bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl shadow-2xl flex flex-col items-center justify-center p-4 border-4 border-purple-700">
+                            <div class="w-16 h-8 bg-red-500 rounded-t-lg mb-2"></div>
+                            <div class="w-full h-full bg-purple-300 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-gift text-6xl text-purple-700"></i>
+                            </div>
+                            <p class="mt-2 font-bold">Present #2</p>
+                        </div>
+                        <div class="flip-back bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl shadow-2xl flex flex-col items-center justify-center p-4 border-4 border-blue-700">
+                            <h4 class="text-xl font-bold mb-2">Congratulations!</h4>
+                            <p class="mb-4">Your special gift:</p>
+                            <a href="#" class="bg-white text-blue-600 px-4 py-2 rounded-lg font-bold hover:bg-blue-100 transition">Audible 3 month subscription!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Birthday Today Celebration -->
+        <div class="mt-20 bg-black bg-opacity-30 rounded-xl p-6 max-w-md mx-auto birthday-today">
+            <h3 class="text-2xl font-bold mb-4">IT'S YOUR BIRTHDAY TODAY!</h3>
+            <div class="flex justify-between text-center">
+                <div class="bg-white bg-opacity-20 rounded-lg p-3 w-16">
+                    <div class="text-2xl font-bold">00</div>
+                    <div class="text-xs">Days</div>
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-lg p-3 w-16">
+                    <div class="text-2xl font-bold">00</div>
+                    <div class="text-xs">Hours</div>
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-lg p-3 w-16">
+                    <div class="text-2xl font-bold">00</div>
+                    <div class="text-xs">Minutes</div>
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-lg p-3 w-16">
+                    <div class="text-2xl font-bold">00</div>
+                    <div class="text-xs">Seconds</div>
+                </div>
+            </div>
+            <div class="mt-4 text-yellow-300">
+                <i class="fas fa-birthday-cake text-4xl"></i>
+                <p class="mt-2">The celebration starts NOW!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-black bg-opacity-40 py-6 mt-12">
+        <div class="container mx-auto text-center">
+            <p class="text-lg">Made with <i class="fas fa-heart text-red-500"></i> for TXC's 31st Birthday</p>
+
+        </div>
+    </footer>
+
+    <script>
+        // Create confetti
+        function createConfetti() {
+            const colors = ['#f9a825', '#e53935', '#8e24aa', '#039be5', '#43a047'];
+            const container = document.getElementById('confetti-container');
+            
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                confetti.style.animationDelay = Math.random() * 5 + 's';
+                container.appendChild(confetti);
+                
+                // Remove confetti after animation
+                setTimeout(() => {
+                    confetti.remove();
+                }, 7000);
+            }
+        }
+
+        // Reveal present
+        function revealPresent(num) {
+            const present = document.querySelectorAll('.present-box')[num-1];
+            present.classList.toggle('open');
+            
+            if (present.classList.contains('open')) {
+                createConfetti();
+            }
+        }
+
+        // Initial confetti
+        createConfetti();
+        
+        // Continuous confetti every 5 seconds
+        setInterval(createConfetti, 5000);
+    </script>
+</body>
+</html>
