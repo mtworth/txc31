@@ -103,41 +103,45 @@
             
             <div class="flex flex-col md:flex-row justify-center gap-8">
                 <!-- Present 1 -->
-                <div class="present-box w-64 h-64 cursor-pointer" onclick="revealPresent(1)">
-                    <div class="flip-inner">
-                        <div class="flip-front bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-xl shadow-2xl flex flex-col items-center justify-center p-4 border-4 border-yellow-700">
-                            <div class="w-16 h-8 bg-red-500 rounded-t-lg mb-2"></div>
-                            <div class="w-full h-full bg-yellow-300 rounded-lg flex items-center justify-center">
-                                <i class="fas fa-gift text-6xl text-yellow-700"></i>
-                            </div>
-                            <p class="mt-2 font-bold">Present #1</p>
+              <!-- Wrapper to center content -->
+        <div class="flex flex-col md:flex-row justify-center items-center gap-6 mt-6">
+            <!-- Present 1 -->
+            <div class="present-box w-64 h-64 cursor-pointer" onclick="revealPresent(1)">
+                <div class="flip-inner">
+                    <div class="flip-front bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-xl shadow-2xl flex flex-col items-center justify-center p-4 border-4 border-yellow-700">
+                        <div class="w-16 h-8 bg-red-500 rounded-t-lg mb-2"></div>
+                        <div class="w-full h-full bg-yellow-300 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-gift text-6xl text-yellow-700"></i>
                         </div>
-                        <div class="flip-back bg-gradient-to-br from-pink-400 to-pink-600 rounded-xl shadow-2xl flex flex-col items-center justify-center p-4 border-4 border-pink-700">
-                            <h4 class="text-xl font-bold mb-2">Surprise!</h4>
-                            <p class="mb-4">You've unlocked:</p>
-                            <a href="#" class="bg-white text-pink-600 px-4 py-2 rounded-lg font-bold hover:bg-pink-100 transition">Invincible - Volume 1</a>
-                        </div>
+                        <p class="mt-2 font-bold">Present #1</p>
                     </div>
-                </div>
-                
-                <!-- Present 2 -->
-                <div class="present-box w-64 h-64 cursor-pointer" onclick="revealPresent(2)">
-                    <div class="flip-inner">
-                        <div class="flip-front bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl shadow-2xl flex flex-col items-center justify-center p-4 border-4 border-purple-700">
-                            <div class="w-16 h-8 bg-red-500 rounded-t-lg mb-2"></div>
-                            <div class="w-full h-full bg-purple-300 rounded-lg flex items-center justify-center">
-                                <i class="fas fa-gift text-6xl text-purple-700"></i>
-                            </div>
-                            <p class="mt-2 font-bold">Present #2</p>
-                        </div>
-                        <div class="flip-back bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl shadow-2xl flex flex-col items-center justify-center p-4 border-4 border-blue-700">
-                            <h4 class="text-xl font-bold mb-2">Congratulations!</h4>
-                            <p class="mb-4">Your special gift:</p>
-                            <a href="#" class="bg-white text-blue-600 px-4 py-2 rounded-lg font-bold hover:bg-blue-100 transition">Audible 3 month subscription!</a>
-                        </div>
+                    <div class="flip-back bg-gradient-to-br from-pink-400 to-pink-600 rounded-xl shadow-2xl flex flex-col items-center justify-center p-4 border-4 border-pink-700">
+                        <h4 class="text-xl font-bold mb-2">Surprise!</h4>
+                        <p class="mb-4">You've unlocked:</p>
+                        <a href="#" class="bg-white text-pink-600 px-4 py-2 rounded-lg font-bold hover:bg-pink-100 transition">Invincible - Volume 1</a>
                     </div>
                 </div>
             </div>
+        
+            <!-- Present 2 -->
+            <div class="present-box w-64 h-64 cursor-pointer" onclick="revealPresent(2)">
+                <div class="flip-inner">
+                    <div class="flip-front bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl shadow-2xl flex flex-col items-center justify-center p-4 border-4 border-purple-700">
+                        <div class="w-16 h-8 bg-red-500 rounded-t-lg mb-2"></div>
+                        <div class="w-full h-full bg-purple-300 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-gift text-6xl text-purple-700"></i>
+                        </div>
+                        <p class="mt-2 font-bold">Present #2</p>
+                    </div>
+                    <div class="flip-back bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl shadow-2xl flex flex-col items-center justify-center p-4 border-4 border-blue-700">
+                        <h4 class="text-xl font-bold mb-2">Congratulations!</h4>
+                        <p class="mb-4">Your special gift:</p>
+                        <a href="#" class="bg-white text-blue-600 px-4 py-2 rounded-lg font-bold hover:bg-blue-100 transition">Audible 3 month subscription!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         </div>
 
         <!-- Birthday Today Celebration -->
